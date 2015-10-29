@@ -17,20 +17,20 @@
 <table cellpadding="0" cellspacing="0" border="0">
     <tr>
         <td class="action-content">
-            <h1>Herzlich willkommen bei {{var store.getFrontendName()}}.</h1>
-            <p>Um sich bei Ihrem nächsten Besuch in unserem Shop anzumelden, klicken Sie einfach auf <a href="{{store url="customer/account/"}}">Anmelden</a> oder <a href="{{store url="customer/account/"}}">Mein Benutzerkonto</a> im oberen Bereich jeder Seite und geben Sie Ihre E-Mail-Adresse sowie Ihr Passwort ein.</p>
+            <h1>Willkommen bei {{var store.getFrontendName()}}.</h1>
+            <p>Um sich bei deinem nächsten Besuch in unserem Shop anzumelden, klicke einfach auf <a href="{{store url="customer/account/"}}">Anmelden</a> oder <a href="{{store url="customer/account/"}}">Mein Benutzerkonto</a> im oberen Bereich jeder Seite und gib deine E-Mail-Adresse sowie Ihr Passwort ein.</p>
             <p class="highlighted-text">
-                Mit folgenden Zugangsdaten können Sie sich anmelden:<br/>
                 <strong>E-Mail-Adresse:</strong> {{var customer.email}}<br/>
                 <strong>Passwort:</strong> {{htmlescape var=$customer.password}}
+                Mit folgenden Zugangsdaten kannst du dich anmelden:<br/>
             </p>
-            <p>Nach erfolgreichem Login auf unserer Seite haben Sie die folgenden Möglichkeiten:</p>
+            <p>Nach erfolgreichem Login auf unserer Seite hast du die folgenden Möglichkeiten:</p>
             <ul>
                 <li>Schnellerer Bezahlvorgang beim nächsten Einkauf,</li>
                 <li>Den Status laufender Bestellungen einsehen,</li>
                 <li>Bestellverlauf einsehen,</li>
-                <li>Ihre Kundendaten verwalten,</li>
-                <li>Ihr Passwort ändern,</li>
+                <li>Deine Kundendaten verwalten,</li>
+                <li>Dein Passwort ändern,</li>
                 <li>Verschiedene Adressen für den Versand an Familienmitglieder und Freunde sowie Rechnungsadressen speichern.</li>
             </ul>
             {{template config_path="design/email/support"}}
