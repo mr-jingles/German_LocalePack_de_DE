@@ -1,4 +1,4 @@
-<!--@subject {{var store.getFrontendName()}}: Neue Bestellung Nr. {{var order.increment_id}} @-->
+<!--@subject {{var store.getFrontendName()}}: Vielen Dank für deine Bestellung @-->
 <!--@vars
 {"store url=\"\"":"Store Url",
 "var logo_url":"Email Logo Image Url",
@@ -28,9 +28,9 @@
                 <tr>
                     <td class="email-heading">
                         <h1>Hallo {{htmlescape var=$order.getCustomerName()}},</h1>
-                        <p>vielen Dank für Ihre Bestellung bei {{var store.getFrontendName()}}.
-                            Sobald Ihre Sendung verschickt wurde, erhalten Sie per E-Mail weitere Informationen zur Sendungsverfolgung.
-                            Nachfolgend finden Sie Ihre Bestellbestätigung.</p>
+                            <p>vielen Dank für deine Bestellung bei {{var store.getFrontendName()}}.
+                                Sobald deine Sendung verschickt wurde, erhältst du per E-Mail weitere Informationen zur Sendungsverfolgung.
+                                Nachfolgend findest du deine Bestellbestätigung.</p>
                     </td>
                     <td class="store-info">
                         {{template config_path="design/email/support"}}
@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <td class="order-details">
-            <h3>Ihre Bestellung Nr. <span class="no-link">{{var order.increment_id}}</span></h3>
+            <h3>Deine Bestellung Nr. <span class="no-link">{{var order.increment_id}}</span></h3>
             <p>vom {{var order.getCreatedAtFormated('long')}}</p>
         </td>
     </tr>
@@ -80,9 +80,45 @@
                         {{var payment_html}}
                     </td>
                 </tr>
-            </table>
+            
+                        
+                        <tr>
+                            <td>
+                                {{block type="magesetup/imprint_content" template="magesetup/imprint/email_footer.phtml"}}
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="business_terms"}}
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="revocation"}}
+                            </td>
+                        </tr>
+                        
+                    
+                        
+                        <tr><td style="border-bottom:2px solid #eee;">&nbsp;</td></tr>
+                        <tr>
+                            <td style="font:9px/1em Verdana, Arial, Helvetica, sans-serif;">
+                                {{block type="cms/block" block_id="revocation_form"}}
+                            </td>
+                        </tr>
+                        
+                    </table>
         </td>
     </tr>
 </table>
 
 {{template config_path="design/email/footer"}}
+
