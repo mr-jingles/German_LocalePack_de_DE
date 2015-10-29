@@ -13,6 +13,7 @@
 <!--@styles
 @-->
 
+
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
 
@@ -23,7 +24,7 @@
                 <tr>
                     <td class="action-content">
                         <h1>Hallo {{htmlescape var=$order.getCustomerName()}},</h1>
-                        <p>Ihre Bestellung Nr. <span class="no-link">#{{var order.increment_id}}</span> hat den Status <strong>{{var order.getStatusLabel()}}</strong>.</p>
+                        <p>Deine Bestellung Nr. <span class="no-link">#{{var order.increment_id}}</span> hat den Status <strong>{{var order.getStatusLabel()}}</strong>.</p>
                         {{if comment}}
                         <table cellspacing="0" cellpadding="0" class="message-container">
                             <tr>
@@ -31,13 +32,22 @@
                             </tr>
                         </table>
                         {{/if}}
-                        <p>Sie können den Status Ihrer Bestellung jederzeit in <a href="{{store url="customer/account/"}}">Ihrem Benutzerkonto</a> einsehen.</p>
+                        <p>Du kannst den Status deiner Bestellung jederzeit in <a href="{{store url="customer/account/"}}">deinem Benutzerkonto</a> einsehen.</p>
                         {{template config_path="design/email/support"}}
                     </td>
                 </tr>
-            </table>
+            
+                        
+                        <tr>
+                            <td>
+                                {{block type="magesetup/imprint_content" template="magesetup/imprint/email_footer.phtml"}}
+                            </td>
+                        </tr>
+                        
+                    </table>
         </td>
     </tr>
 </table>
 
 {{template config_path="design/email/footer"}}
+
